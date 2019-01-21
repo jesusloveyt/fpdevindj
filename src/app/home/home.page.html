@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Countries
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <!--<form>-->
+    <!--<mat-form-field>-->
+    <!--<input type="text" [formControl]="myControl" [matAutoComplete]="auto" matInput #input>-->
+    <!--<mat-autocomplete #auto="matAutoComplete" (optionSelected)="">-->
+    <!--<mat-option *ngFor="let country of dataForTable">-->
+
+    <!--</mat-option>-->
+    <!--</mat-autocomplete>-->
+    <!--</mat-form-field>-->
+    <!--</form>-->
+
+    <div class="myDiv">
+        <ion-input class="myInput" type="text" placeholder="Search..." (ionChange)="filter($event.detail.value)"></ion-input>
+        <ion-item>
+            <ion-label>Sort by...</ion-label>
+            <ion-select interface="action-sheet" (ionChange)="sort($event.target.value)">
+                <ion-select-option *ngFor="let option of sortOptions"
+                                   [value]="option.value">{{option.name}}</ion-select-option>
+            </ion-select>
+        </ion-item>
+    </div>
+    <div>
+        <table style="width: 100%;">
+            <tr>
+                <th>Country Name</th>
+                <th>Capital Name</th>
+                <th>Continent</th>
+            </tr>
+            <tr *ngFor="let c of dataForTable; let odd = odd; let even = even" [ngClass]="{odd: odd, even: even}" (click)="openMap(c)">
+                <td>{{c.CountryName}}</td>
+                <td>{{c.CapitalName}}</td>
+                <td>{{c.ContinentName}}</td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+</ion-content>
