@@ -1,0 +1,19 @@
+To install Ionic:
+
+1) Install NodeJS (https://nodejs.org/en/download/)
+
+2) Install Ionic using terminal/command propmt (npm install -g ionic) 
+
+3) Start a new Ionic project with: ionic start <app name>
+
+4) Choose `Yes` for Ionic 4 beta, `No` for all other options.
+
+5) Pull files from this repo in your projects /src/app/home directory.
+
+6) Start app in browser with: ionic lab
+
+7) To install to an Android phone install ADB (https://developer.android.com/studio/releases/platform-tools), Enable 'Developer Options' on device, install to phone with: ionic cordova run android --device
+
+8) In the resources folder replace the 'splash.png' and 'icon.png' with your images (must be the same size; eg 600x600 for icon). Generate resources with: ionic cordova resources
+
+9) In `config.xml` change app name
